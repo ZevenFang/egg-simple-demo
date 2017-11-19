@@ -23,14 +23,12 @@ module.exports = appInfo => {
 
   // add middleware robot
   config.middleware = [
-    'robot',
+    'errorHandler'
   ];
-  // robot's configurations
-  config.robot = {
-    ua: [
-      /Baiduspider/i,
-    ],
-  };
+  // 对所有的 url 路径生效
+  config.errorHandler = {
+    match: '/',
+  },
 
   config.mongoose = {
     url: 'mongodb://127.0.0.1/example',

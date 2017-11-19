@@ -10,3 +10,6 @@ module.exports.mongoose = {
   enable: true,
   package: 'egg-mongoose',
 };
+module.exports.validate = {
+  package: 'egg-validate',
+};

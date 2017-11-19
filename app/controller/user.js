@@ -1,8 +1,14 @@
 /**
- * Created by fangf on 2017/11/18.
+ * 测试 mongodb
  */
 
 const Controller = require('egg').Controller;
+
+var rule = {
+  username: 'string',
+  password: 'string',
+  age: 'int',
+};
 
 class UserController extends Controller {
   async index() {
@@ -11,8 +17,9 @@ class UserController extends Controller {
   }
   async create() {
     const ctx = this.ctx;
-    let {username, password} = ctx.query;
-    ctx.body = await ctx.service.user.add(username, password);
+    ctx.query.age = parseInt(ctx.query.age);
+    ctx.validate(rule, ctx.query);
+    ctx.body = await ctx.service.user.create(ctx.query);
   }
 }
 
