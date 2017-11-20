@@ -4,7 +4,7 @@
 
 const Controller = require('egg').Controller;
 
-var rule = {
+let rule = {
   username: 'string',
   password: 'string',
   age: 'int',
