@@ -31,7 +31,7 @@ class PostsController extends Controller {
     this.ctx.body = await this.ctx.model.Posts.updateOne({_id: this.ctx.params.id}, {$set: data});
   }
   async destroy() {
-    this.ctx.body = await this.ctx.model.Posts.deleteOne(this.ctx.params.id);
+    this.ctx.body = await this.ctx.model.Posts.deleteOne({_id: this.ctx.params.id});
   }
 
 }
