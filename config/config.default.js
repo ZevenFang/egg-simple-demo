@@ -21,14 +21,20 @@ module.exports = appInfo => {
     serverUrl: 'https://news-at.zhihu.com/api/4',
   };
 
-  // add middleware robot
+  // add middleware
   config.middleware = [
-    'errorHandler'
+    'errorHandler', 'robot'
   ];
   // 对所有的 url 路径生效
   config.errorHandler = {
     match: '/',
-  },
+  };
+  // robot's configurations
+  config.robot = {
+    ua: [
+      /Baiduspider/i,
+    ],
+  };
 
   config.mongoose = {
     url: 'mongodb://127.0.0.1/example',
