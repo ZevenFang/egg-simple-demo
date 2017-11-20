@@ -26,10 +26,12 @@ class PostsController extends Controller {
   }
   async update() {
     let data = this.ctx.request.body;
-    this.ctx.body = await this.ctx.model.Posts.updateOne(this.ctx.params.id, data);
+    data.thumb = parseInt(data.thumb);
+    this.ctx.validate(rule, data);
+    this.ctx.body = await this.ctx.model.Posts.updateOne({_id: this.ctx.params.id}, {$set: data});
   }
   async destroy() {
-
+    this.ctx.body = await this.ctx.model.Posts.deleteOne(this.ctx.params.id);
   }
 
 }

@@ -35,5 +35,11 @@ module.exports = appInfo => {
     options: {}
   };
 
+  config.security = {
+    csrf: {
+      enable: false, // 关闭 csrf, 只在前后端分离项目使用
+    },
+  };
+
   return config;
 };
