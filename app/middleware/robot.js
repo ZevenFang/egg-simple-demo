@@ -1,6 +1,6 @@
 // app/middleware/robot.js
 // options === app.config.robot
-module.exports = (options, app) => {
+module.exports = options => {
   return async function robotMiddleware(ctx, next) {
     const source = ctx.get('user-agent') || '';
     const match = options.ua.some(ua => ua.test(source));

@@ -23,7 +23,7 @@ module.exports = appInfo => {
 
   // add middleware
   config.middleware = [
-    'errorHandler', 'robot'
+    'errorHandler', 'robot',
   ];
   // 对所有的 url 路径生效
   config.errorHandler = {
@@ -38,7 +38,7 @@ module.exports = appInfo => {
 
   config.mongoose = {
     url: 'mongodb://127.0.0.1/example',
-    options: {}
+    options: {},
   };
 
   config.security = {
@@ -50,7 +50,7 @@ module.exports = appInfo => {
   config.jwt = {
     secret: 'egg-simple-demo',
     enable: true, // default is false
-    match: '/api'
+    match: '/api',
   };
 
   return config;

@@ -32,7 +32,7 @@ class UsersController extends Controller {
       console.warn(u);
       const token = this.app.jwt.sign({username: u.username, age: u.age}, this.config.jwt.secret);
       ctx.body = {token};
-    } else ctx.body = {error: 'login fail'}
+    } else ctx.body = {error: 'login fail'};
   }
   async api() {
     this.ctx.body = this.ctx.state.user;

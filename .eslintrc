@@ -1,3 +1,10 @@
 {
-  "extends": "eslint-config-egg"
+  "extends": "eslint-config-egg",
+  "rules": {
+    "strict": "off",
+    "prefer-const": "off",
+    "object-curly-spacing": "off",
+    "no-empty-function": "off",
+    "eol-last": "off"
+  }
 }
