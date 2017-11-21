@@ -5,7 +5,10 @@ class UserService extends Service {
     return await this.ctx.model.Users.find(query);
   }
   async create(user){
-    return await this.ctx.model.Users.create(user);
+    let {Users} = this.ctx.model;
+    let u = await Users.findOne({username: user.username});
+    if (u) return {error: 'username exist'};
+    return await Users.create(user);
   }
 }
 

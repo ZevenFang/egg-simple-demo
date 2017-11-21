@@ -47,5 +47,11 @@ module.exports = appInfo => {
     },
   };
 
+  config.jwt = {
+    secret: 'egg-simple-demo',
+    enable: true, // default is false
+    match: '/api'
+  };
+
   return config;
 };

@@ -13,3 +13,7 @@ module.exports.mongoose = {
 module.exports.validate = {
   package: 'egg-validate',
 };
+module.exports.jwt = {
+  enable: true,
+  package: 'egg-jwt',
+};
