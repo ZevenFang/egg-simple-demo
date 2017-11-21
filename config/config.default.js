@@ -53,5 +53,25 @@ module.exports = appInfo => {
     match: '/api',
   };
 
+  // if config.sts == true, oss will create STS client
+  config.oss = {
+    client: {
+      sts: true,
+      accessKeyId: 'accessKeyId',
+      accessKeySecret: 'accessKeySecret',
+    },
+    role: 'role',
+    expire: 15 * 60,
+    session: 'egg-simple-demo',
+    policy: {
+      Statement: [{
+        Action: 'oss:*',
+        Effect: 'Allow',
+        Resource: '*',
+      }],
+      Version: '1',
+    },
+  };
+
   return config;
 };

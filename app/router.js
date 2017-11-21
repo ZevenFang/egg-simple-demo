@@ -9,4 +9,5 @@ module.exports = app => {
   app.post('/users/token', app.controller.users.token);
   app.get('/api/users/token', app.controller.users.api);
   app.resources('posts', '/posts', app.controller.posts);
+  app.resources('oss', '/oss', app.controller.oss);
 };
