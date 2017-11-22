@@ -17,7 +17,3 @@ module.exports.jwt = {
   enable: true,
   package: 'egg-jwt',
 };
-module.exports.oss = {
-  enable: true,
-  package: 'egg-oss',
-};
