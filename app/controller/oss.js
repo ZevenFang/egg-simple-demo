@@ -3,13 +3,14 @@
  */
 
 const {Controller} = require('egg');
+const STS = require('../utils/STS');
 
 class OssController extends Controller {
 
   async index() {
-    const token = this.app.oss.assumeRole(
-      this.config.oss.role,
-      this.config.oss.policy,
+    let sts = new STS(this.config.oss.client);
+    const token = await sts.assumeRole(
+      this.config.oss.role, null,
       this.config.oss.expire,
       this.config.oss.session
     );

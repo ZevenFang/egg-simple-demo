@@ -5,6 +5,7 @@
     "prefer-const": "off",
     "object-curly-spacing": "off",
     "no-empty-function": "off",
-    "eol-last": "off"
+    "eol-last": "off",
+    "valid-jsdoc": "off"
   }
 }
