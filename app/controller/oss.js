@@ -7,12 +7,8 @@ const {Controller} = require('egg');
 class OssController extends Controller {
 
   async index() {
-    const token = await this.app.sts.assumeRole(
-      this.config.oss.role, null,
-      this.config.oss.expire,
-      this.config.oss.session
-    );
-    this.ctx.body = token;
+    // await this.app.runSchedule('update_sts_token');
+    this.ctx.body = this.app.stsToken;
   }
   async create() {
 

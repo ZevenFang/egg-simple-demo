@@ -60,8 +60,9 @@ module.exports = appInfo => {
       accessKeySecret: 'accessKeySecret',
     },
     role: 'role',
-    expire: 15 * 60,
+    expire: 3600,
     session: 'egg-simple-demo',
+    policy: null,
   };
 
   return config;
