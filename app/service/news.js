@@ -4,7 +4,7 @@ const Service = require('egg').Service;
 class NewsService extends Service {
   async list() {
     // read config
-    const { serverUrl } = this.config.news;
+    const serverUrl = 'https://news-at.zhihu.com/api/4';
 
     // use build-in http client to GET hacker-news api
     const { data: news } = await this.ctx.curl(`${serverUrl}/news/latest`, {

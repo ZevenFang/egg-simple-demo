@@ -1,13 +1,12 @@
 'use strict';
 
+let oss = require('./oss.config');
+
 module.exports = appInfo => {
   const config = exports = {};
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1510881582682_7976';
-
-  // add your config here
-  config.middleware = [];
 
   // 添加 view 配置
   config.view = {
@@ -15,10 +14,6 @@ module.exports = appInfo => {
     mapping: {
       '.tpl': 'nunjucks',
     },
-  };
-
-  config.news = {
-    serverUrl: 'https://news-at.zhihu.com/api/4',
   };
 
   // add middleware
@@ -56,10 +51,10 @@ module.exports = appInfo => {
   // if config.sts == true, oss will create STS client
   config.oss = {
     client: {
-      accessKeyId: 'accessKeyId',
-      accessKeySecret: 'accessKeySecret',
+      accessKeyId: oss.accessKeyId,
+      accessKeySecret: oss.accessKeySecret,
     },
-    role: 'role',
+    role: oss.role,
     expire: 3600,
     session: 'egg-simple-demo',
     policy: null,

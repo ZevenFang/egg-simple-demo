@@ -12,7 +12,7 @@ module.exports = app => {
         app.config.oss.expire,
         app.config.oss.session
       );
-      console.info('execute update sts token task');
+      app.logger.info('[update_sts_token] execute update sts token task');
     },
   };
 };
