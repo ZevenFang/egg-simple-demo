@@ -31,7 +31,7 @@
   };
   document.getElementById('upload').onclick = function () {
     var file = document.getElementById('file').files[0];
-    var key = +new Date() + '_' + file.name;
+    var key = 'test/' + Date.now() + '_' + file.name;
     console.log(file.name + ' => ' + key);
     document.getElementById('progress').innerHTML = '0%';
     return client.multipartUpload(key, file, {
