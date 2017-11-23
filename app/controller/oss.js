@@ -7,19 +7,10 @@ const {Controller} = require('egg');
 class OssController extends Controller {
 
   async index() {
+    await this.ctx.render('oss/index.tpl');
+  }
+  async token() {
     this.ctx.body = this.app.stsToken;
-  }
-  async create() {
-
-  }
-  async show() {
-
-  }
-  async update() {
-
-  }
-  async destroy() {
-
   }
 
 }
