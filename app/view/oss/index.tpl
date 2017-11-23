@@ -33,12 +33,11 @@
     var file = document.getElementById('file').files[0];
     var key = +new Date() + '_' + file.name;
     console.log(file.name + ' => ' + key);
-    console.warn(client);
+    document.getElementById('progress').innerHTML = '0%';
     return client.multipartUpload(key, file, {
       progress: progress
     }).then(function (res) {
       console.log('upload success: %j', res);
-      return listFiles(client);
     });
   };
 </script>
