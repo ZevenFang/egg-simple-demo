@@ -2,7 +2,7 @@ module.exports = app => {
   return {
     schedule: {
       interval: (app.config.oss.expire - 5) * 1000, // 提前 5s 刷新
-      type: 'all',
+      type: 'worker',
       // disable: app.config.env === 'local', // 本地开发环境不执行
     },
     async task(ctx) {
