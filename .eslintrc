@@ -7,6 +7,6 @@
     "no-empty-function": "off",
     "eol-last": "off",
     "valid-jsdoc": "off",
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": "off"
   }
 }
