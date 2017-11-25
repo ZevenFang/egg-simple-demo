@@ -1,6 +1,7 @@
 'use strict';
 
 let oss = require('./oss.config');
+let weixin = require('./weixin.config');
 
 module.exports = appInfo => {
   const config = exports = {};
@@ -48,7 +49,6 @@ module.exports = appInfo => {
     match: '/api',
   };
 
-  // if config.sts == true, oss will create STS client
   config.oss = {
     client: {
       accessKeyId: oss.accessKeyId,
@@ -58,6 +58,11 @@ module.exports = appInfo => {
     expire: 3600,
     session: 'egg-simple-demo',
     policy: null,
+  };
+
+  config.weixin = {
+    appid: weixin.APPID,
+    secret: weixin.APPSECRET,
   };
 
   return config;
