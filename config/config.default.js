@@ -45,6 +45,8 @@ module.exports = appInfo => {
 
   config.jwt = {
     secret: 'egg-simple-demo',
+    expiresIn: 3600, // 一小时
+    refreshExpireIn: 86400, // 一天
     enable: true, // default is false
     match: '/api',
   };

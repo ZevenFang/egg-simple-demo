@@ -7,6 +7,7 @@ module.exports = app => {
   app.get('/users/list', app.controller.users.list);
   app.get('/users/create', app.controller.users.create);
   app.post('/users/token', app.controller.users.token);
+  app.get('/api/users/token/refresh', app.controller.users.refresh);
   app.get('/api/users/token', app.controller.users.api);
   app.resources('posts', '/posts', app.controller.posts);
   app.resources('oss', '/oss', app.controller.oss);
