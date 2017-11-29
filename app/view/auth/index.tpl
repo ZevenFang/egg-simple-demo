@@ -1,4 +1,3 @@
-<!-- app/view/news/list.tpl -->
 <html>
 <head>
     <title>Token</title>
@@ -20,7 +19,7 @@
     var password = document.getElementById('password');
     var credentials = '';
     document.getElementById('get_token').onclick = function () {
-      axios.post('/users/token', {username: username.value, password: password.value})
+      axios.post('/auth/token', {username: username.value, password: password.value})
         .then(function (res) {
           if (res.data.error) alert(res.data.error);
           else {
@@ -31,7 +30,7 @@
     };
     document.getElementById('refresh_token').onclick = function () {
       var refresh = document.getElementById('refresh');
-      axios.get('/api/users/token/refresh', {headers: {Authorization: 'Bearer '+credentials.refresh_token}})
+      axios.get('/auth/token/refresh', {headers: {Authorization: 'Bearer '+credentials.refresh_token}})
         .then(function (res) {
           credentials = res.data;
           refresh.innerHTML = JSON.stringify(res.data);
@@ -41,7 +40,7 @@
     };
     document.getElementById('parse_token').onclick = function () {
       var parse = document.getElementById('parse');
-      axios.get('/api/users/token', {headers: {Authorization: 'Bearer '+credentials.token}})
+      axios.get('/auth/token/parse', {headers: {Authorization: 'Bearer '+credentials.token}})
         .then(function (res) {
           parse.innerHTML = JSON.stringify(res.data);
         }).catch(function (err) {

@@ -48,7 +48,7 @@ module.exports = appInfo => {
     expiresIn: 3600, // 一小时
     refreshExpireIn: 86400, // 一天
     enable: true, // default is false
-    match: '/api',
+    match: ctx => /^\/api|\/auth\/token\/.+/.test(ctx.url),
   };
 
   config.oss = {
