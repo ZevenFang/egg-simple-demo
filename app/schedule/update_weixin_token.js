@@ -3,7 +3,7 @@ module.exports = app => {
     schedule: {
       interval: '7200s',
       type: 'worker',
-      // disable: app.config.env === 'local', // 本地开发环境不执行
+      immediate: true,
     },
     async task(ctx) {
       const res = await ctx.service.weixin.token(app.config.weixin.appid, app.config.weixin.secret);

@@ -3,7 +3,7 @@ module.exports = app => {
     schedule: {
       interval: (app.config.oss.expire - 5) * 1000, // 提前 5s 刷新
       type: 'worker',
-      // disable: app.config.env === 'local', // 本地开发环境不执行
+      immediate: true,
     },
     async task(ctx) {
       ctx.app.stsToken = await app.sts.assumeRole(
